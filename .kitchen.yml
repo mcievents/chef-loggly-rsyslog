@@ -1,0 +1,22 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: ubuntu-12.04
+    driver:
+      vm_hostname: "loggly-rsyslog.vagrant.dev"
+
+suites:
+  - name: default
+    data_bags_path: "test/integration/default/data_bags"
+    encrypted_data_bag_secret_key_path: "test/integration/default/encrypted_data_bag_secret"
+    run_list:
+      - recipe[loggly-rsyslog::default]
+    attributes:
+      loggly:
+        tags:
+          - "vagrant"
