@@ -6,10 +6,8 @@ default['loggly']['log_files'] = []
 
 default['loggly']['tls']['enabled'] = true
 default['loggly']['tls']['cert_path'] = '/etc/rsyslog.d/keys/ca.d'
-default['loggly']['tls']['cert_url'] = 'https://logdog.loggly.com/media/loggly.com.crt'
-default['loggly']['tls']['cert_checksum'] = '69559ef5e65be40abf939cc2ecb7380df3c6a7fa86386f02a1be395cad6afa6d'
-default['loggly']['tls']['intermediate_cert_url'] = 'https://certs.starfieldtech.com/repository/sf_bundle.crt'
-default['loggly']['tls']['intermediate_cert_checksum'] = '87d171b3333ca95a98aa02603fdb6508939c63f69e14c8587bd66c4f4df65032'
+default['loggly']['tls']['cert_url'] = 'https://logdog.loggly.com/media/logs-01.loggly.com_sha12.crt'
+default['loggly']['tls']['cert_checksum'] = 'b562ae82b54bcb43923290e78949153c0c64910d40b02d2207010bb119147ffc'
 
 default['loggly']['rsyslog']['host'] = 'logs-01.loggly.com'
 default['loggly']['rsyslog']['port'] = node['loggly']['tls']['enabled'] ? 6514 : 514
